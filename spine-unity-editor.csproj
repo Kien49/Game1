@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{89782D97-AF75-5463-27DC-7182F31383E2}</ProjectGuid>
+    <ProjectGuid>{9F27C560-70F8-C575-DAD3-8B1D9E862A22}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>spine-unity-editor</AssemblyName>
@@ -718,7 +718,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="spine-unity.csproj">
-      <Project>{E1A1FDC2-073F-7111-03D9-D910992CCB63}</Project>
+      <Project>{CECAEED5-F99E-3780-97C7-4572FE7E2E16}</Project>
       <Name>spine-unity</Name>
     </ProjectReference>
   </ItemGroup>

@@ -107,6 +107,7 @@ public class SpineCtrlPlayer : MonoBehaviour
     public void death()
     {
         spineAnimationState.SetAnimation(0, deathAnimation, false);
+        StartCoroutine(DelaySwapSatusGame(1f));
     }
     public void stun()
     {
@@ -115,6 +116,7 @@ public class SpineCtrlPlayer : MonoBehaviour
     public void attack_1()
     {
         spineAnimationState.SetAnimation(0, atkAnimationSword, false);
+        StartCoroutine(DelayAnimAtk(.45f));
     }
     public void attack_2()
     {
@@ -135,6 +137,25 @@ public class SpineCtrlPlayer : MonoBehaviour
     public void win()
     {
         spineAnimationState.SetAnimation(0, buffAnimation2, true);
+    }
+
+    private IEnumerator DelayAnimAtk(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if(GameCtrl.ins.enemy!= null)
+        {
+            GameCtrl.ins.enemy.TakeDamege(PlayerController.ins.dameFinal());
+        }
+    }
+
+    private IEnumerator DelaySwapSatusGame(float time)
+    {
+        UIManager.ins.paneLoss.SetActive(true);
+        GameCtrl.ins.DestroyEnemy();
+        yield return new WaitForSeconds(time);
+        UIManager.ins.paneLoss.SetActive(false);
+        yield return new WaitForSeconds(time);
+        GameCtrl.ins.SwapAtkNormal();
     }
 
 }

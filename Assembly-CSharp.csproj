@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{75AC4C40-F16B-156B-5A80-9157E3301C82}</ProjectGuid>
+    <ProjectGuid>{7A8E2D87-BD4D-935C-C539-C3FF95D2C919}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameCtrl.cs" />
     <Compile Include="Assets\Scripts\Enemy\SpineCtrlEnemy.cs" />
     <Compile Include="Assets\Scripts\UI\PanelTop.cs" />
     <Compile Include="Assets\Asset\Free 2D Cartoon Parallax Background\Demo\Script\ParallaxBackground_0.cs" />
@@ -70,7 +71,6 @@
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\TxtHpDown.cs" />
     <Compile Include="Assets\Asset\Free 2D Cartoon Parallax Background\Demo\Script\BackgroundControl_0.cs" />
-    <Compile Include="Assets\Scripts\BgCtrl.cs" />
     <Compile Include="Assets\Scripts\Player\SpineCtrlPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemy\EType1.cs" />
     <Compile Include="Assets\Scripts\UI\PanellWin.cs" />
@@ -760,19 +760,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="spine-unity-examples-editor.csproj">
-      <Project>{C2164FEC-FCDB-9D06-EB26-BDE962D12EA3}</Project>
+      <Project>{DC39CD27-FA34-16C5-5108-E7A0F2147044}</Project>
       <Name>spine-unity-examples-editor</Name>
     </ProjectReference>
     <ProjectReference Include="spine-unity.csproj">
-      <Project>{E1A1FDC2-073F-7111-03D9-D910992CCB63}</Project>
+      <Project>{CECAEED5-F99E-3780-97C7-4572FE7E2E16}</Project>
       <Name>spine-unity</Name>
     </ProjectReference>
     <ProjectReference Include="spine-unity-examples.csproj">
-      <Project>{6E04799D-1A57-F6A2-035B-D92D31633359}</Project>
+      <Project>{44639F34-17EA-D997-B6AF-4E985512ECE3}</Project>
       <Name>spine-unity-examples</Name>
     </ProjectReference>
     <ProjectReference Include="spine-unity-editor.csproj">
-      <Project>{89782D97-AF75-5463-27DC-7182F31383E2}</Project>
+      <Project>{9F27C560-70F8-C575-DAD3-8B1D9E862A22}</Project>
       <Name>spine-unity-editor</Name>
     </ProjectReference>
   </ItemGroup>

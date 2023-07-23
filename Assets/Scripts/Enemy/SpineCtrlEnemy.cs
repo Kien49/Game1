@@ -34,12 +34,14 @@ public class SpineCtrlEnemy : MonoBehaviour
    
     public Spine.AnimationState spineAnimationState;
     public Spine.Skeleton skeleton;
+    private EnemyController enemyController;
     // Start is called before the first frame update
     void Start()
     {
         skeletonAnimation = GetComponent<SkeletonAnimation>();
         spineAnimationState = skeletonAnimation.AnimationState;
         skeleton = skeletonAnimation.Skeleton;
+        enemyController = GetComponent<EnemyController>();
     }
     public void Hit()
     {
@@ -52,10 +54,12 @@ public class SpineCtrlEnemy : MonoBehaviour
     public void shoot()
     {
         spineAnimationState.SetAnimation(0, shootAnimation, false);
+        StartCoroutine(DelayAnimAtk(.2f));
     }
     public void death()
     {
         spineAnimationState.SetAnimation(0, deathAnimation, false);
+        StartCoroutine(desTroy(1f));
     }
     public void hoverBoard()
     {
@@ -69,5 +73,20 @@ public class SpineCtrlEnemy : MonoBehaviour
     {
         spineAnimationState.SetAnimation(0, jumpAnimation, true);
     }
-    
+
+    private IEnumerator desTroy(float time)
+    {
+        yield return new WaitForSeconds(time);
+        if(GameCtrl.ins.statusAtkBoss) GameCtrl.ins.isSpawnBoss = true;
+        if (GameCtrl.ins.statusAtkNormal) GameCtrl.ins.isSpawnNormal = true;
+        Destroy(gameObject);
+    }
+
+    private IEnumerator DelayAnimAtk(float time)
+    {
+
+        yield return new WaitForSeconds(time);
+        PlayerController.ins.TakeDamege(enemyController.dameEnemy);
+    }
+
 }

@@ -11,7 +11,7 @@ public class SpawnEnemy : MonoBehaviour
         ins = this;
     }
 
-    public int totalEnemyOfMap;
+    public int totalEnemyBoss;
     public int idxEnemy;
     public bool isSpawn;
 
@@ -33,16 +33,17 @@ public class SpawnEnemy : MonoBehaviour
 
     private void spawnE()
     {
-        if(isSpawn && totalEnemyOfMap > 0)
+        if(isSpawn && totalEnemyBoss > 0)
         {
             spawnEnemyFollowIndex(listIndexOfEnemySpawn[idxEnemy]);
         }
+        
     }
     private void spawnEnemyFollowIndex(int i)
     {
         EnemyController e = Instantiate(listEnemy[i], new Vector3(PlayerController.ins.transform.position.x + 8, PlayerController.ins.transform.position.y, PlayerController.ins.transform.position.z), Quaternion.Euler(0, 180, 0), this.transform);
         isSpawn = false;
-        totalEnemyOfMap -= 1;
+        totalEnemyBoss -= 1;
         idxEnemy++;
     }
 }

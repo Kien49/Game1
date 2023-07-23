@@ -401,8 +401,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7772313502393099381}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 6, y: -2, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 7772313500716321362}
   m_Father: {fileID: 0}
@@ -455,7 +455,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7772313502393099383
 MonoBehaviour:
@@ -491,7 +491,7 @@ MonoBehaviour:
     materialsInsideMask: []
     materialsOutsideMask: []
   disableRenderingOnOverride: 1
-  _animationName: walk
+  _animationName: jump
   loop: 1
   timeScale: 1
 --- !u!50 &7772313502393099379
@@ -543,24 +543,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eafa04c06c95e0949ac06e2c9a43b094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRangeEnemy: 2
+  attackRangeEnemy: 0.5
   attackSpeedEnemy: 2
   dameEnemy: 1
   hpEnemy: 20
-  speedEnemy: 1
-  eRun: 0
+  speedEnemy: 3
+  eSpawn: 0
   eAtck: 0
-  eHited: 0
   eDie: 0
   rb2D: {fileID: 7772313502393099379}
   boxCollider: {fileID: 7772313502393099378}
   spine: {fileID: 7772313502393099389}
-  layer:
-    serializedVersion: 2
-    m_Bits: 65
   healthBar: {fileID: 7772313501813546145}
   canvasE: {fileID: 7772313500716321373}
-  txtHpDown: {fileID: 2278045795311151514, guid: 522adfec58aafed47a02857b2bc16e67, type: 3}
+  txtHpDown: {fileID: 2278045795311151514, guid: cd74cfe3160a8e34aa3ed23d4e72a808, type: 3}
 --- !u!114 &7772313502393099389
 MonoBehaviour:
   m_ObjectHideFlags: 0
