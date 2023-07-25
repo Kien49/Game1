@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager ins;
+    public static UIManager ins { get; private set; }
     private void Awake()
     {
-        ins = this;
+        if (ins != null && ins != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            ins = this;
+        }
     }
     public GameObject panelWin;
     public GameObject paneLoss;
@@ -17,6 +24,9 @@ public class UIManager : MonoBehaviour
         paneLoss.SetActive(false);
         panelWin.SetActive(false);
     }
-
+    public void setActiveGameobject(GameObject gameObject)
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
+    }
 
 }
